@@ -1,24 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import Column from "./components/Column";
+import SlidersColumn from "./components/SlidersColumn";
+import MachinesColumn from "./components/MachinesColumn";
+import FormColumn from "./components/FormColumn";
+import {useState} from "react";
 
 function App() {
+  const [selectedMachine, setSelectedMachine] = useState(null);
+  const [selectedWeight, setSelectedWeight] = useState(0);
+  const [selectedHeight, setSelectedHeight] = useState(0);
+  const [selectedEngineType, setSelectedEngineType] = useState(null);
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <div className="App">
+        <div className={"formContainer"}>
+          <Column title={"1. Określ wymagania"} colNumber={"col1"}>
+            <SlidersColumn machine={selectedMachine} weight={selectedWeight} height={selectedHeight} engineType={selectedEngineType} setWeight={setSelectedWeight} setHeight={setSelectedHeight} setEngineType={setSelectedEngineType}></SlidersColumn>
+          </Column>
+          <Column title={"2. Wybierz urządzenie"} colNumber={"col2"}>
+            <MachinesColumn selectMachine={setSelectedMachine} weight={selectedWeight} height={selectedHeight} engineType={selectedEngineType}/>
+          </Column>
+          <Column title={"3. Wyślij zapytanie"} colNumber={"col3"}>
+            <FormColumn machine={selectedMachine}/>
+          </Column>
+        </div>
+      </div>
   );
 }
 
