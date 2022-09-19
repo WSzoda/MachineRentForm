@@ -9,10 +9,56 @@ body{
 *{
     font-family: 'Roboto', sans-serif;
 }
+.podlozeTypy{
+    font-size: 0.9rem;
+}
+.middleRowContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.checkboxContainer{
+    padding:15px;
+}
+.checkboxDescription{
+    display:inline;
+    padding-left:10px;
+}
+#zniknijFormularz{
+    display: none;
+}
+.selected{
+    background: #FF6319;
+    color: white;
+}
+.selected > img{
+    filter: brightness(0) invert(1);
+}
+.buttonContainer{
+    display: flex;
+    align-items:center;
+    justify-content:center;
+    padding-bottom:20px;
+}
+.sendButton{
+    width:50%;
+    height:50px;
+    border-radius:50px;
+    border:1px solid black;
+    background-color:white;
+    cursor: pointer;
+}
+.errorContainer{
+    padding:0 20px;
+    text-align: center;
+}
 .formContainer{
     display:grid;
     gap: 10px;
     grid-template-columns: 1fr 1fr 1fr;
+}
+.formContainer *{
+    font-family: 'Roboto', sans-serif  !important;
 }
 
 .column{
@@ -63,8 +109,8 @@ body{
     height:20px;
     width: 102%;
     left: -1%;
-    padding: 0;
-    margin: 0;
+    padding: 0 !important;
+    margin: 0 !important;
     background: none;
     -webkit-appearance: none;
     appearance:none;
@@ -78,14 +124,14 @@ body{
     margin-top: -2px;
     background-color: black;
 }
-.sliderExcess{
+/*.sliderExcess{
     position: absolute;
     left: 0;
     top: 0;
     height: 18px;
     border-radius: 20px;
     background: red;
-}
+}*/
 .titleAndValue{
     display: flex;
     justify-content:space-between;
@@ -95,9 +141,6 @@ body{
     display: flex;
     flex-direction: column;
     margin: 15px 0;
-}
-.engineTypeContainer > select{
-    width: 40%;
 }
 .machineContent{
     display: flex;
@@ -112,16 +155,17 @@ body{
     padding: 10px;
 }
 .machineDescription > p,h3{
-    margin: 0;
+    margin: 0 !important;
 }
 .topBar{
-    background-color: #97a6a7;
-    color: #fff;
-    padding: 15px;
-    font-size: 0.95rem;
+    background-color: #97a6a7  !important;
+    color: #fff  !important;
+    padding: 15px  !important;
+    font-size: 0.95rem  !important;
 }
 .topBar > p{
     margin: 5px 0;
+    padding-bottom: 0 !important;
 }
 .sliderColumn, .formBody{
     padding: 15px;
@@ -133,22 +177,23 @@ body{
     content: " m";
 }
 .formBody > p{
+    padding-bottom: 0 !important;
     margin: 5px 0;
     font-weight: 500;
     font-size: 0.9rem;
 }
-.formBody > input[type="text"]{
-    font-family: 'Roboto', sans-serif;
+.formBody input[type="text"]{
+    font-family: 'Roboto', sans-serif  !important;
 }
 input,select, textarea{
-    margin: 3px 0;
-    padding: 5px;
-    font-weight: 700;
-    line-height: 1.43;
-    border: none;
+    margin: 3px 0 !important;
+    padding: 5px  !important;
+    font-weight: 700  !important;
+    line-height: 1.43  !important;
+    border: none  !important;
 }
 .formBody > h3{
-    margin: 5px 0;
+    margin: 5px 0 !important;
 }
 .formBody{
     display: flex;
@@ -162,7 +207,7 @@ input,select, textarea{
     justify-content: space-between;
 }
 .machinesList{
-    padding: 0;
+    padding: 0  !important;
 }
 .machineIcon{
     height: 50px;

@@ -18,10 +18,9 @@ function FormColumn(props){
     let weight = 0;
     let machineName = "";
     if(props.machine != null){
-        range = props.machine.range;
-        weight = props.machine.weight;
         machineName = props.machine.name;
     }
+
 
     function handleSubmit(event){
         event.preventDefault();
@@ -32,10 +31,10 @@ function FormColumn(props){
         <div className="topBar">
             <h3>{machineName}</h3>
             <input type={"hidden"} name={"machineName"} value={machineName}/>
-            <p className={"heightP"}>Wysokość robocza: {range}</p>
-            <input type={"hidden"} name={"range"} value={range}/>
-            <p className={"weightP"}>Udźwig: {weight}</p>
-            <input type={"hidden"} name={"weight"} value={weight}/>
+            <p className={"heightP"}>Wysokość robocza: {props.height}</p>
+            <input type={"hidden"} name={"range"} value={props.height}/>
+            <p className={"weightP"}>Udźwig: {props.weight}</p>
+            <input type={"hidden"} name={"weight"} value={props.weight}/>
         </div>
         <div className="formBody">
             <h3>Zapotrzebowanie</h3>
@@ -309,8 +308,13 @@ function FormColumn(props){
             <input type={"text"} placeholder={"NIP *"} name={"nip"} id={"nip"} value={nip} onChange={(e) =>{setNip(e.target.value)}}/>
             <textarea type={"text"} placeholder={"Treść zapytania"} name={"message"} id={"message"} rows={4} cols={20} value={message} onChange={(e) =>{setMessage(e.target.value)}}/>
         </div>
-        <div>
-            <button type={"submit"}>WYŚLIJ</button>
+        <div className="checkboxContainer"><input type="checkbox" value="false"/><p className="checkboxDescription">Tak,
+            wyrażam zgodę na zbieranie, przetwarzanie, przechowywanie, wykorzystywanie przez lifters danych zawartych w
+            formularzu. Wszelkie informacje o celu zbierania, zasadach przechowywania i przetwarzania danych, a także o
+            możliwości cofnięcia zgody na ich przetwarzanie znajdziesz w naszej <a
+                href="https://lifters.pl/polityka-prywatnosci/">polityce prywatności</a>. *</p></div>
+        <div className="buttonContainer">
+            <button type="submit" className="sendButton">WYŚLIJ</button>
         </div>
     </form>
     )

@@ -22,7 +22,7 @@ function SlidersColumn(props){
             let maxHeight = props.machine.range;
             console.log(maxHeight);
             let excess = document.getElementById("sliderHeightExcess");
-            let widthPerOneMeter = Math.floor(heightWidth / 57);
+            let widthPerOneMeter = Math.floor(heightWidth / 58);
             if(maxHeight >= value){
                 excess.style.width=0 + "px";
                 return;
@@ -40,7 +40,7 @@ function SlidersColumn(props){
         if(props.machine != null) {
             let maxWeight = props.machine.weight;
             let excess = document.getElementById("sliderWeightExcess");
-            let widthPerOneKilo = weightWidth / 12000;
+            let widthPerOneKilo = weightWidth / 6000;
             if(maxWeight >= value){
                 excess.style.width=0 + "px";
                 return;
@@ -68,19 +68,22 @@ function SlidersColumn(props){
                     <input type="text" value={props.height}/>
                 </div>
                 <div className="sliderContainer">
-                    <span className="sliderExcess" id="sliderHeightExcess"></span>
-                    <input ref={heightSlider} className="slider" id="sliderHeight" type="range" min="0" max="57" value={props.height} onChange={handleHeightChange}/>
+                    <input ref={heightSlider} className="slider" id="sliderHeight" type="range" min="0" max="58" value={props.height} onChange={handleHeightChange}/>
                 </div>
             </div>
-            <div className="engineTypeContainer">
-                <label htmlFor="engineType">Rodzaj napędu</label>
-                <select name="engineType" id="engineType" onChange={handleEngineSelect} value={props.engineType}>
-                    <option></option>
-                    <option value="spalinowy">Spalinowy</option>
-                    <option value="elektryczny">Elektryczny</option>
-                    <option value="gazowy">Gazowy</option>
-                    <option value="hybrid">Hybrid</option>
-                </select>
+            <div className="middleRowContainer">
+                <div className="engineTypeContainer">
+                    <label htmlFor="engineType">Rodzaj napędu</label>
+                    <select name="engineType" id="engineType" onChange={handleEngineSelect} value={props.engineType}>
+                        <option></option>
+                        <option value="spalinowy">Spalinowy</option>
+                        <option value="elektryczny">Elektryczny</option>
+                    </select>
+                </div>
+                <div className="podlozeTypy">
+                    <p>spalinowy - podłoże terenowe</p>
+                    <p>elektryczny - podłoże twarde</p>
+                </div>
             </div>
             <div>
                 <div className="titleAndValue">
@@ -88,8 +91,7 @@ function SlidersColumn(props){
                     <input type="text" value={props.weight}/>
                 </div>
                 <div className="sliderContainer">
-                    <span className="sliderExcess" id="sliderWeightExcess"></span>
-                    <input ref={weightSlider} className="slider" id="sliderWeight" type="range" min="0" max="12000" value={props.weight} onChange={handleWeightChange}/>
+                    <input ref={weightSlider} className="slider" id="sliderWeight" type="range" min="0" max="6000" value={props.weight} onChange={handleWeightChange}/>
                 </div>
             </div>
         </div>

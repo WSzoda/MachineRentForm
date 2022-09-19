@@ -2,28 +2,19 @@ import Machine from "./Machine";
 import nozycoweIcon from "../assets/nozycowe.svg";
 import ladowarkiTeleskopoweIcon from "../assets/ladowarkiTeleskopowe.svg";
 import nozycoweElektryczneIcon from "../assets/nozywcoweElektryczne.svg";
-import podestyMasztoweIcon from "../assets/podestyMasztowe.svg";
-import podestyNaPrzyczepieIcon from "../assets/podestyNaPrzyczepie.svg";
-import podestyRollliftIcon from "../assets/podestyRolllift.svg";
-import podestyTeleskopoweIcon from "../assets/podestyTeleskopowe.svg";
+import ladowarkiSamochodweIcon from "../assets/ladowarkiSamochodwe.svg";
 import podestyTeleskopoweDieselIcon from "../assets/podestyteleskopowedisel.svg"
 import podestyTeleskopoweElektryczneIcon from "../assets/podestyTeleskopoweElektryczne.svg";
-import pojazdySpecjalneIcon from "../assets/pojazdySpecjalne.svg";
-
+let selectedMachineId = "";
 
 function MachinesColumn(props){
-    let selectedMachineId = "";
     const machines = [
-        {id: "podestyNozycoweElektryczne", range: 21.70, weight:550, engine:"elektryczny" , name:"Podesty nożycowe elektryczne", icon:nozycoweElektryczneIcon},
-        {id: "podestyNozycoweDiesel", range: 21.70, weight:1134, engine:"spalinowy" , name:"Podesty nożycowe diesel" , icon:nozycoweIcon},
-        {id: "podestyRollLift", range: 8.02, weight:272, engine:"" , name:"Podesty Roll-Lift", icon:podestyRollliftIcon},
-        {id: "podestyTeleskopowoPrzeguboweDiesel", range: 48.2, weight:454, engine:"spalinowy" , name:"Podesty teleskopowo-przegubowe diesel", icon:podestyTeleskopoweDieselIcon},
-        {id: "podestyTeleskopowe", range: 57, weight:567, engine:"" , name:"Podesty teleskopowe", icon:podestyTeleskopoweIcon},
-        {id: "pojazdySpecjalne", range: 23, weight:2990, engine:"" , name:"Pojazdy specjalne", icon:pojazdySpecjalneIcon},
-        {id: "podestyNaPrzyczepie", range: 25, weight:226, engine:"" , name:"Podesty na przyczepie", icon:podestyNaPrzyczepieIcon},
-        {id: "podestyMasztowe", range: 12.7, weight:200, engine:"" , name:"Podesty masztowe", icon:podestyMasztoweIcon},
-        {id: "podestyTeleskopowoPrzeguboweElektryczne", range: 28.0, weight:280, engine:"elektryczny" , name:"Podesty teleskopowo-przegubowe elektryczne", icon:podestyTeleskopoweElektryczneIcon},
-        {id: "ladowarkiTeleskopowe", range: 26.05, weight:12000, engine:"" , name:"Ładowarki teleskopowe", icon:ladowarkiTeleskopoweIcon},
+        {id: "podestyNozycoweElektryczne", range: 16.0, weight:450, engine:"elektryczny" , name:"Podesty nożycowe elektryczne", icon:nozycoweElektryczneIcon},
+        {id: "podestyNozycoweDiesel", range: 18.0, weight:1020, engine:"spalinowy" , name:"Podesty nożycowe diesel" , icon:nozycoweIcon},
+        {id: "podestyTeleskopowoPrzeguboweDiesel", range: 58.0, weight:340, engine:"spalinowy" , name:"Podesty teleskopowo-przegubowe diesel", icon:podestyTeleskopoweDieselIcon},
+        {id: "podestyTeleskopowoPrzeguboweElektryczne", range: 20.0, weight:230, engine:"elektryczny" , name:"Podesty teleskopowo-przegubowe elektryczne", icon:podestyTeleskopoweElektryczneIcon},
+        {id: "podestyNaSamochodzie", range: 18.0, weight:220, engine:"spalinowy" , name:"Podesty na samochodzie", icon:ladowarkiSamochodweIcon},
+        {id: "ladowarkiTeleskopowe", range: 30.0, weight:6000, engine:"spalinowy" , name:"Ładowarki teleskopowe", icon:ladowarkiTeleskopoweIcon},
     ]
     function handleClick(id){
         let selectedMachine;

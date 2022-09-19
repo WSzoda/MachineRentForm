@@ -21,7 +21,7 @@ function App() {
             <MachinesColumn selectMachine={setSelectedMachine} weight={selectedWeight} height={selectedHeight} engineType={selectedEngineType}/>
           </Column>
           <Column title={"3. Wyślij zapytanie"} colNumber={"col3"}>
-            <FormColumn machine={selectedMachine}/>
+            <FormColumn machine={selectedMachine} weight={selectedWeight} height={selectedHeight}/>
           </Column>
         </div>
       </div>
